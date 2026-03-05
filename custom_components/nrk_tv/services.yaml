@@ -1,0 +1,50 @@
+play_channel:
+  name: Play NRK channel
+  description: >-
+    Resolves the live stream URL for an NRK channel and plays it on the
+    specified media player (e.g. Chromecast, smart TV).
+  fields:
+    channel_id:
+      name: Channel
+      description: "NRK channel to play"
+      required: true
+      example: "nrk1"
+      selector:
+        select:
+          options:
+            - label: "NRK1"
+              value: "nrk1"
+            - label: "NRK2"
+              value: "nrk2"
+            - label: "NRK3"
+              value: "nrk3"
+            - label: "NRK Super"
+              value: "nrksuper"
+    target:
+      name: Media player
+      description: "Media player to play the stream on"
+      required: true
+      selector:
+        entity:
+          domain: media_player
+
+resolve_stream:
+  name: Resolve NRK stream URL
+  description: >-
+    Resolves the HLS stream URL for an NRK channel or program ID.
+    Optionally plays it on a media player.
+  fields:
+    channel_id:
+      name: Channel or Program ID
+      description: "NRK channel ID (nrk1, nrk2, nrk3, nrksuper) or on-demand program ID"
+      required: true
+      example: "nrk1"
+      selector:
+        text:
+    entity_id:
+      name: Target media player
+      description: "Optional: media player entity to start playback on"
+      required: false
+      selector:
+        entity:
+          domain: media_player

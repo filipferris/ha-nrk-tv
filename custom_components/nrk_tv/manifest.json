@@ -1,0 +1,11 @@
+{
+  "domain": "nrk_tv",
+  "name": "NRK TV",
+  "codeowners": ["@filipferris"],
+  "config_flow": true,
+  "dependencies": ["http"],
+  "documentation": "https://github.com/filipferris/ha-nrk-tv",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/filipferris/ha-nrk-tv/issues",
+  "version": "1.0.0"
+}

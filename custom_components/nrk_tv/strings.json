@@ -1,0 +1,27 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "NRK TV",
+        "description": "Choose how to set up NRK TV.",
+        "data": {
+          "setup_method": "Setup method"
+        }
+      },
+      "token": {
+        "title": "NRK Account",
+        "description": "Paste the JSON output from the `nrk-token-helper` tool.",
+        "data": {
+          "token_json": "Token JSON"
+        }
+      }
+    },
+    "error": {
+      "invalid_json": "Could not parse the pasted text as JSON.",
+      "missing_fields": "JSON is missing required fields (user_id, session_cookie)."
+    },
+    "abort": {
+      "already_configured": "This NRK account is already configured."
+    }
+  }
+}

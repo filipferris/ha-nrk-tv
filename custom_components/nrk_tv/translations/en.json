@@ -1,0 +1,57 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "NRK TV",
+        "description": "Choose how to set up NRK TV.",
+        "data": {
+          "setup_method": "Setup method"
+        }
+      },
+      "token": {
+        "title": "NRK Account",
+        "description": "Paste the JSON output from the `nrk-token-helper` tool.",
+        "data": {
+          "token_json": "Token JSON"
+        }
+      }
+    },
+    "error": {
+      "invalid_json": "Could not parse the pasted text as JSON.",
+      "missing_fields": "JSON is missing required fields (user_id, session_cookie)."
+    },
+    "abort": {
+      "already_configured": "This NRK account is already configured."
+    }
+  },
+  "services": {
+    "play_channel": {
+      "name": "Play NRK channel",
+      "description": "Resolves the live HLS stream URL for an NRK channel and plays it on a media player (e.g. Chromecast, smart TV).",
+      "fields": {
+        "channel_id": {
+          "name": "Channel ID",
+          "description": "NRK channel identifier (nrk1, nrk2, nrk3, nrksuper)."
+        },
+        "target": {
+          "name": "Media player",
+          "description": "The media player entity to play the stream on."
+        }
+      }
+    },
+    "resolve_stream": {
+      "name": "Resolve NRK stream URL",
+      "description": "Resolves the HLS stream URL for an NRK channel or on-demand program ID. Optionally plays it on a media player.",
+      "fields": {
+        "channel_id": {
+          "name": "Channel or program ID",
+          "description": "NRK channel ID (nrk1, nrk2, nrk3, nrksuper) or an on-demand program ID."
+        },
+        "entity_id": {
+          "name": "Target media player",
+          "description": "Optional media player entity to start playback on after resolving the URL."
+        }
+      }
+    }
+  }
+}
